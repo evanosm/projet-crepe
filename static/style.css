@@ -233,6 +233,10 @@ body {
 }
 
 @media screen and (max-width: 1280px) {
+    body {
+        overflow: hidden;
+    }
+    
     .bg {
         height: 100%;
         width: auto;

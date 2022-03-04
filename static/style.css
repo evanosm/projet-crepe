@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.bg {
+    width: 100vw;
+    height: auto;
+    filter: blur(50px) grayscale(100%);
+    transform: scale(1.2);
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content .title {
+    animation: appear 1s ease-in-out;
+    color: white;
+    font-family: 'Noto Serif Display', serif;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.content .number-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .number-div .number-input {
+    animation: appearRotate 1s ease-in-out;
+    width: 10vh;
+    height: 10vh;
+    border: 1px white solid;
+    background: linear-gradient(0deg, rgba(0,255,255,.2) 0%, rgba(255,45,0,0) 100%);
+    box-shadow: 0px 5px 15px -10px #FFFFFF;
+    transition: all .2s ease-in-out;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1em;
+    margin-right: .5em;
+    border-radius: 10px;
+}
+
+.content .number-input::placeholder {
+    color: #ccc;
+    filter: opacity(.2);
+    display: inline-block;
+}
+
+.content .number-div .number-button {
+    animation: appearRotate 1s ease-in-out;
+    width: 10vh;
+    height: 10vh;
+    border: 1px white solid;
+    background: linear-gradient(0deg, rgba(0,255,0,.2) 0%, rgba(255,45,0,0) 100%);
+    box-shadow: 0px 5px 15px -10px #FFFFFF;
+    transition: all .2s ease-in-out;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 2em;
+    margin-left: .5em;
+    border-radius: 50%;
+}
+
+.content .number-div .number-button:hover {  
+    box-shadow: 0px 5px 15px -5px #FFFFFF;
+}
+
+
+
+.content .result {
+    animation: appear 1s ease-in-out;
+    width: 70vw;
+    height :30vh;
+    background: linear-gradient(0deg, rgba(255,0,255,.2) 0%, rgba(255,45,0,0) 100%);
+    border: 1px white solid;
+    box-shadow: 0px 5px 15px -10px #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content .result .result-inside {
+    width: 40%;
+    height: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.content .result .result-inside .result-table {
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.result-table th {
+    background-color: white;
+    color: black;
+}
+
+.result-table td {
+    text-align: center;
+}
+
+.result-table td, .result-table th {
+    border: 1px solid white;
+}
+
+.content .number-input:hover {
+    box-shadow: 0px 5px 15px -5px #FFFFFF;
+}
+
+.content .result .result-inside .result-widget {
+    width: 10vh;
+    height: 10vh;
+    border: 1px white solid;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 50%;
+    background: none;
+}
+
+.fiche {
+    position: absolute;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0) rotate(20deg);
+    transition: all 1s ease-in-out;
+}
+
+.fiche .fiche-content {
+    width: 60vw;
+    height: 80vh;
+    z-index: 11;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#recipe-title {
+    font-family: 'Noto Serif Display', serif;
+    text-align: center; 
+}
+
+.fiche .fiche-content .close {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    width: 15%;
+    height: 5%;
+    background: none;
+    border: 1px red solid;
+    color: red;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    border-radius: 5px;
+}
+
+.fiche .fiche-content .close:hover {
+    background-color: red;
+    color: white;
+    transition: all .3s ease-out;
+}
+
+.fiche .fiche-content ol {
+    font-family: 'Noto Serif Display', serif;
+    text-align: justify;
+    font-size: 1.5em;
+    line-height: 2em;
+}
+
+.fiche .fiche-content li {
+    font-family: 'Quicksand', sans-serif;
+}
+
+@keyframes appearRotate {
+    from {
+        filter: opacity(0) blur(10px);
+        transform: translateY(-10%) rotate(360deg) scale(.2);
+    } to {
+        filter: opacity(1) blur(0px);
+        transform: translateY(0);
+    }
+}
+
+@keyframes appear {
+    from {
+        filter: opacity(0) blur(10px);
+        transform: translateY(-10%) scale(.2);
+    } to {
+        filter: opacity(1) blur(0px);
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .bg {
+        height: 100%;
+        width: auto;
+    }
+    .content .result .result-inside .result-table {
+        transform: scale(.7);
+    }
+    .fiche .fiche-content {
+        width: 85vw;
+        height: 80vh;
+    }
+    .fiche .fiche-content ol {
+        font-family: 'Noto Serif Display', serif;
+        text-align: justify;
+        font-size: 1em;
+        line-height: 2em;
+        text-align: center;
+    }
+
+    .fiche .fiche-content h1 {
+        font-size: 1.5em;
+    }
+}
+

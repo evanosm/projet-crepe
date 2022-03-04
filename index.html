@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/style.css">
+
+    <script src="https://kit.fontawesome.com/1dc7c53c83.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <img src="https://64.media.tumblr.com/090493a3c3c87e727d945d57b06b156b/tumblr_py399qjRsa1qeyvpto1_500.gifv" alt="bg" class="bg">
+
+    <div class="content">
+
+        <h1 class="title">Crêpe Party</h1>
+
+        <div class="number-div">
+            <input type="text" maxlength="3" class="number-input" placeholder="nombre" id="number">
+            <button id="sendNumber" class="number-button" onclick="crepeGenerator3000()"> 
+                <i class="fa-solid fa-check"></i>
+            </button>
+        </div>
+
+        <div class="result">
+
+            <div class="result-inside" id="recette">
+                <table class="result-table">
+                <thead>
+                    <tr>
+                    <th>Ingrédient</th>
+                    <th>Quantité</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Lait</td>
+                    <td id="nbLait">X</td>
+                    </tr>
+                    <tr>
+                    <td>Oeufs</td>
+                    <td id="nbOeufs">X</td>
+                    </tr>
+                    <tr>
+                    <td>Farine</td>
+                    <td id="nbFarine">X</td>
+                    </tr>
+                    <tr>
+                    <td>Sucre</td>
+                    <td id="nbSucre">X</td>
+                    </tr>
+                    <tr>
+                    <td>Huile</td>
+                    <td id="nbHuile">X</td>
+                    </tr>
+                </tbody>
+                </table>   
+                
+                
+            </div>
+
+            <div class="result-inside">
+                <button class="result-widget" onclick="show('preparation')">
+                    <i class="fa-solid fa-utensils"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="fiche" id="preparation">
+            <div class="fiche-content">
+
+                <h1 id="recipe-title">Recette de crêpes : </h1>
+
+                <ol>
+                    <li>Fouettez l'oeuf avec la moitié du lait</li>
+                    <li>Incorporez la farine et le sucre</li>
+                    <li>Dalayez avec le reste du lit</li>
+                    <li>Faites cuire dans une crêpière bien chaude et graissée</li>
+                </ol>
+
+                <button class="close" id="close" onclick="hide('preparation')">Fermer</button>
+            </div>
+        </div>
+
+        <div class="fiche" id="shopping">
+            <div class="fiche-content">
+                <button class="close" id="close" onclick="hide('shopping')">Fermer</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./script/app.js"></script>
+</body>
+</html>

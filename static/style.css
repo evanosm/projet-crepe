@@ -14,7 +14,6 @@ body {
     width: 100vw;
     height: auto;
     filter: blur(50px) grayscale(100%);
-    transform: scale(1.2);
 }
 
 .content {
